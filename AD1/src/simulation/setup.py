@@ -3,16 +3,16 @@ Created on Feb 11, 2018
 
 @author: Yuri Rodrigues
 '''
-from .animal import Animal
 
-class Fish(object, Animal):
+class Ecosystem(object):
     '''
     classdocs
     '''
 
-
-    def __init__(self, params):
+    def __init__(self):
         '''
         Constructor
         '''
         
+    def run(self):
+        print("Running Simulation")        
