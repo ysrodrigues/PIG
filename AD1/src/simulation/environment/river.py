@@ -15,9 +15,6 @@ class River(object):
         Constructor
         '''
     
-    def __repr__(self, *args, **kwargs):
-        return object.__repr__(self, *args, **kwargs)
-    
     def addRandom(self, animal):
         '''
         Add an animal of age 0 of randomly chosen
