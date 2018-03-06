@@ -4,11 +4,9 @@ Created on Mar 5, 2018
 @author: Yuri Rodrigues
 '''
 import unittest
-from simulation.animals import Bear
+from animals import Bear
 
 class BearTest(unittest.TestCase):
-
-
     def setUp(self):
         self.age = 3
         self.ageNotIncr = 10
@@ -17,9 +15,6 @@ class BearTest(unittest.TestCase):
 
     def tearDown(self):
         pass
-
-    def testMaxAge(self):
-        self.assertEqual(self.bear.maxAge(), 10)
     
     def testGetAge(self):
         self.assertEqual(self.bear.getAge(), self.age)
@@ -33,8 +28,14 @@ class BearTest(unittest.TestCase):
     def testNotIncrAge(self):
         self.bear.age = self.ageNotIncr
         self.assertFalse(self.bear.incrAge())
-
-
+    
+    def testRandomCreationAge(self):
+        bear = Bear()
+        self.assertIn(bear.getAge(), range(10))
+        
+    def testRandomCreationGender(self):
+        bear = Bear()
+        self.assertIn(bear.gender, ["M", "F"])
+    
 if __name__ == "__main__":
-    #import sys;sys.argv = ['', 'Test.testName']
     unittest.main()
