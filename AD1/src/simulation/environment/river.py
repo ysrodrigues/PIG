@@ -5,6 +5,7 @@ Created on Feb 11, 2018
 '''
 
 import random
+import animals
 
 class River(object):
     '''
@@ -30,8 +31,6 @@ class River(object):
         @param seed: rng seed to update river
         '''
         
-        self.cells = []
-        
         if seed is not None:
             self.setSeed(seed)
         
@@ -42,8 +41,13 @@ class River(object):
             except IOError as err:
                 print(err)
                 
-        elif(isinstance(args, int)):    
+        elif(isinstance(args, int)):
+            self.cells = [None]*args
             self.length = args
+            
+            for i in range(self.length):
+                rand = random.choice([None, animals.Bear(), animals.Fish()])
+                self.cells[i] = rand
     
     def __repr__(self):
         return repr(self.cells)[1:-1].replace(",", "").replace("None", "———")
@@ -96,10 +100,23 @@ class River(object):
         self.seed = seed
     
     def updateCell(self, i):
+        '''
+        Process the object at cell i, following the rules given in the
+        Project Description.
+        
+        @type i: int
+        @param i: the cell which will be update
+        '''
         return
     
     def updateRiver(self):
-        return
+        '''
+        Perform one cycle of the simulation, going through the cells
+        of the river, updating ages, moving animals, creating animals,
+        creating animals, and killing animals. 
+        '''
+        for i in self.getLength():
+            self.updateCell(i)
     
     def write(self, outputFileName):
         try:
