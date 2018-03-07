@@ -21,7 +21,7 @@ def main():
     @return: Exit code that means no error occurred.
     '''
     
-    biosystem = simulation.Ecosystem()
+    biosystem = simulation.RiverSimulation()
     biosystem.run()
     
     return os.EX_OK

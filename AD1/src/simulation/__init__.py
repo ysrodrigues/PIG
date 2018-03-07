@@ -1,1 +1,1 @@
-from .setup import Ecosystem
+from .setup import RiverSimulation
