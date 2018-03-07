@@ -107,7 +107,7 @@ class River(object):
         @type i: int
         @param i: the cell which will be update
         '''
-        return
+        pass
     
     def updateRiver(self):
         '''
